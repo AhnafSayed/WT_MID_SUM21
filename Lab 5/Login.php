@@ -7,6 +7,9 @@
 	$err_password="";
 	
 	if	($_SERVER["REQUEST_METHOD"]=="POST")
+		
+//--Username--//
+
 		{
           if (strlen($_POST["username"])<6)
 			{
@@ -20,6 +23,9 @@
 			{
 				$username=$_POST["username"];
 			}
+
+//--Password--//
+
 			if(strlen($_POST["password"])>8)
 			{
 				$pass=$_POST["password"];
@@ -63,6 +69,11 @@
 			}
 			else	
 			$err_password="Password length must be 8 or longer!";
+
+
+		echo "Username: ".htmlspecialchars($_POST["username"])."<br>";
+		echo "Password: ".htmlspecialchars($_POST["password"])."<br>";
+
 		}
 ?>		
 
@@ -73,7 +84,7 @@
 	<body>
 		<center>
 		<form action="" method="post">
-		<fieldset style="width:270px" "height:300px">
+		<fieldset style="width:500px" "height:300px">
 		<legend align="center"><h1><b>Login</b></h1></legend>
 			<table>			
 				<tr>
@@ -94,7 +105,7 @@
 				</tr>
 				<br>
 				<tr>
-				<td><h5>Don't have an account?</h5><a href="Signup.php"><h5>Sign Up!</h5></a></td>
+				<td><h5>Don't have an account?</h5><a href="Signupoption.php"><h5>Sign Up!</h5></a></td>
 				</tr>
 			</table>
 	    </fieldset>
